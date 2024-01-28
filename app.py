@@ -7,10 +7,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # Read CSV file
-    #data = data
+    data = data
 
     # Pass data to the template
-    return render_template('index.html')
+    return render_template('index.html',data=data)
 
 
 if __name__ == '__main__':
