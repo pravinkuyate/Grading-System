@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results for {{ person_name }}</h1>
+
+    <h2>Tabular Data</h2>
+    <p>Below is the tabular data for {{ person_name }}:</p>
+    {{ person_table|safe }}
+
+    <h2>Plots</h2>
+    <p>Below are the plots for {{ person_name }}:</p>
+    {% for col, plot in plots.items() %}
+        <h3>{{ col }} Distribution</h3>
+        <img src="data:image/png;base64,{{ plot }}" alt="{{ col }} Distribution">
+    {% endfor %}
+</body>
+</html>
