@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt  # Corrected import statement for matplotlib
 import seaborn as sns
 import numpy as np
-data = pd.read_csv(r"C:\Users\HP\Downloads\Dummy_dataset(1).csv")
+data = pd.read_csv(r"C:\Users\pravinkuyate\OneDrive\Desktop\grading_system\Dummy_dataset(1).csv")
 
 # Print the entire DataFrame
 print(data)
