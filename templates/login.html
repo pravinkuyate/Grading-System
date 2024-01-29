@@ -95,36 +95,37 @@
 
       <!-- Form Start -->
       <div class="tengah">
-        <div class="login">
-          <label>
-            <div class="fas fa-user"></div>
-            <input
-              class="username"
-              type="text"
-              autocomplete="on"
-              placeholder="Username"
-            />
-          </label>
-          <label>
-            <div class="fas fa-lock"></div>
-            <input
-              class="password"
-              type="password"
-              autocomplete="off"
-              placeholder="password"
-            />
-            <button class="password-button">show</button>
-          </label>
-          <button class="login-button">sign in</button>
-        </div>
+        <form action="/search" method="GET">
+          <div class="login">
+            <label>
+              <div class="fas fa-user"></div>
+              <input
+                class="username"
+                type="text"
+                autocomplete="on"
+                placeholder="Username"
+              />
+            </label>
+            <label>
+              <div class="fas fa-lock"></div>
+              <input
+                class="password"
+                type="password"
+                autocomplete="off"
+                placeholder="password"
+              />
+              <button class="password-button">show</button>
+            </label>
+            <button type="submit" class="login-button">sign in</button>
+          </div>
+        </form>
       </div>
-
       <!-- Form End -->
 
       <!-- Footer Start  -->
       <div class="footer">
         <p>
-          Don't have account yet?
+          Don't have an account yet?
           <a class="footer-a" href="registrasi.html">Sign Up</a>
         </p>
       </div>

@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}"> <!-- Linking CSS file -->
 </head>
 <body>
-    <h1>Results for {{ person_name }}</h1>
-
-    <h2>Tabular Data</h2>
-    <p>Below is the tabular data for {{ person_name }}:</p>
-    {{ person_table|safe }}
-
-    <h2>Plots</h2>
-    <p>Below are the plots for {{ person_name }}:</p>
-    {% for col, plot in plots.items() %}
-        <h3>{{ col }} Distribution</h3>
-        <img src="data:image/png;base64,{{ plot }}" alt="{{ col }} Distribution">
-    {% endfor %}
+    <div class="background"></div> <!-- Background container -->
+    <div class="container">
+        <h1>Welcome, <span class="name">{{ name }}</span>!</h1>
+        
+        <div class="row">
+            <div class="section">
+                <h2>Grading Test Marks</h2>
+                <img src="{{ url_for('static', filename='grading_tests_plot.png') }}" alt="Grading Test Marks">
+            </div>
+            
+            <div class="section">
+                <h2>Attendance</h2>
+                <img src="{{ url_for('static', filename='plot_attendance.png') }}" alt="Attendance">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="section">
+                <h2>Trainer Rating</h2>
+                <img src="{{ url_for('static', filename='plot_feedback.png') }}" alt="trainer feedback">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="section">
+                <h2>Viva Marks</h2>
+                <img src="{{ url_for('static', filename='plot_viva.png') }}" alt="Viva Marks 1-30">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
