@@ -12,7 +12,17 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    animation: moveBackground 10s linear infinite alternate; /* Animation for moving background */
+    animation: moveBackground 5s linear infinite alternate; /* Adjust duration as needed */
+    background: 
+        linear-gradient(135deg, #f6d365 10%, #fda085 100%),  /* Gradient for sky */
+        linear-gradient(45deg, #f6d365 10%, #fda085 100%);     /* Gradient for ground */
+    background-size: 400% 400%;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 50%; }   /* Starting position */
+    50% { background-position: 100% 50%; } /* Middle position */
+    100% { background-position: 0% 50%; }  /* Ending position */
 }
 
 .container {
@@ -25,13 +35,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Keyframes for background animation */
-@keyframes moveBackground {
-    from { background-position: 0 0; }
-    to { background-position: 100% 100%; }
-}
-
 h1 {
     color: #333;
     text-align: center;
