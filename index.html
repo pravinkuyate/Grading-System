@@ -5,26 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web App</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .welcome-message {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
 </head>
 <body>
-    <h1>Data from CSV File</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <!-- Add more columns as needed -->
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data.values %}
+    <div class="welcome-message">
+        <h1>Welcome To Grading System Incenter</h1>
+    </div>
+    <div id="login-form" style="display: none;">
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <div id="table-data" style="display: none;">
+        <h1>Data from CSV File</h1>
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
-                    <!-- Add more cells as needed -->
+                    <th>Column 1</th>
+                    <th>Column 2</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username === "admin" && password === "admin") {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("table-data").style.display = "block";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+        
+        window.onload = function() {
+            document.querySelector('.welcome-message').addEventListener('animationend', function() {
+                document.getElementById("login-form").style.display = "block";
+            });
+        };
+    </script>
 </body>
 </html>
